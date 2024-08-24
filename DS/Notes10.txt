@@ -1,0 +1,44 @@
+Reorganize string
+Maximized capital
+Min cost to hire workers
+IPO
+
+26.Seats-1.i=0,j-end of string(l-1)
+        2.run till i<=j and increment leftPeople for 'x' and i++,run till i<=j and increment rightPeople for 'x' and dec j,if i<=j if l<=r i++,else j-- & ans=ans+l/r)%mod for both
+        3.r->ans
+
+4.Choose and Swap-insert all character in set
+                2.iterate on string and remove s[i](ch1) from set check if set empty("aa")(then break)
+                    2.1 by *S.begin check next smaller if ch2<ch1 then iterate on string and replace ch1 by ch2 and ch2 by ch1 and break;
+                3.return str
+
+8.Minimum cost to cut a board in square-1.sort both array in descending.
+                    2.Initially horizontal and vertical piece take as 1
+                    2.run till both length reach to end(||)...take value from both array and if one end take -inf if vertical cost more then mincost+=vc*vp hp++ ptr++ same for horizontal cost
+
+11.MaximumSumAfterKNegation-1.sort array
+                            2.if ele<0 & k>0 subtract k by 1 and make number +ve and add always
+                            3.if k>0 sort array k=k%2 if k==1subtract from sum-=2*A[0]
+                            4.return sum
+
+12.Defense of Kingdom-1.take all coordinates in x and y array and add 0 and row length,column       length in both and sort.
+    2.find max width and height of undefended region
+
+13.Smallest Subset with sumGreater than all other element-1.sort array
+                2.find sum of all element
+                3.reverse iterate and add in current sum and sub in sum if current sum>sum return n-i 
+                4.last return 0
+
+15.Smallest Number with D digit and Sum s:1.if 9*D<S then cant be made.
+            2.run till sum>9 place digit from last and subtract from sum
+            3.if digit remaining greater than 1 then place 1 at beginining and subtact 1 from S,
+            place 0 aage and at last posn place remaining sum 
+                else place remaining sum at first posn
+            4.r->string
+  
+18.Die hard problem-1.take dp size according to constraints
+    2.calculate maximum time survival for each medium(health+x,armor-y) and return max
+    3.if health<=0|armor<=0 r->0 && dp condn
+    4.if state 1 dp[h][a]=max(s2,s3) similarly for all state
+    5.return dp[h][a]
+

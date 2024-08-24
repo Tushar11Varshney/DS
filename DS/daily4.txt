@@ -1,0 +1,339 @@
+*Dp mein initialise with value which can not be a answer but if suppose taking -1 then check that -1 does not affect answer
+
+16-aug
+208. Implement Trie (Prefix Tree)
+211. Design Add and Search Words Data Structure
+421. Maximum XOR of Two Numbers in an Array
+212. Word Search 2
+
+18 Aug
+Palindromic Substring/Count/Longest
+Longest palindromic subsequence/generate ans-using string dp,linkedlist,variable
+Distinct Subseq
+Longest Common subseq/If s2 subseq of s1/Uncrossed Lines
+Minimum operation to make string equal
+Longest common substring
+Distinct subseq 2
+
+======================
+27aug
+1.TARGET sum bst-4
+2.Validate bst-2 
+3.Largest bst
+4.size/sum/max(2)/min(2)/search(2)/mindepth(leetcode)/maxdepth/insert(2)
+5.sorted array to bst(2)
+6.replace sum of larger
+7.range in bst(2)
+8.lca in bst(2)
+9.Levelorder(4)
+10.right side/left side/zigzag/average/levelorder bottom/maxlevelSum/bottom left val
+
+======================
+28 aug
+1.Find Anagram(2-hmap,array)
+2.K anagram
+3.Anagram mapping
+4.Valid anagram(2)
+5.Group Anagram(2)
+6.Group shifted string
+7.Word Pattern
+8.Isomorphic String
+9.Count distinct in k len(2)
+10.Longest/Count sub non rep char (2 tarikke likhne ke)
+11.Count/Longest substring atmost k unique
+12.Min window in s for all unique char in string t/smallest window for all unique char of s
+
+======================
+30 Aug
+1.costruct bt/display
+2.update bal and height
+3.Clone bt
+4.flip eqvn(2)
+5.construct mbt
+6.generate bst
+7.possible fbt
+
+8.Hashmap/generic
+9.Hashset
+10.First uniq char
+11.Sum of unique #
+12.# of employee under every manager
+13.pair with sum in 2 sorted matrix(2)
+14.complete task
+15.contain duplicate-2
+16.contain duplicate 2-2
+
+======================
+31 aug
+1.find kth largest
+2.top k frequent
+3.kth smallest in sorted matrix
+4.intersection 1/2
+5.Longest consecutive(2)
+6.max freq char
+7.arithmetic seq
+8.sort k sorted array
+9.Merge k list-2(array/LL)
+10.copy random list
+
+11.Find/Node to root path(2)/root to node dist(edge)
+12.lca
+13.All node at dist k(2)
+14.preorder/postorder(2)
+15.Invert Tree
+16.same tree/mirror tree
+17.Longest univalue path tree
+18.Count univalue subtree
+19.Longest consc-2
+20.Longest consc2
+
+======================
+2 sept
+1.boundary traversal
+2.Delete leave with given val/remove leaves
+3.step-step dirn from binary node to other
+
+======================
+18 feb
+    Construct Graph-addEdge/findEdge/removeEdge/removeVertex/display
+    center of star graph
+    1.dfs/print all path dfs
+    2.smallest,largest,ceil,floor,kth largest
+    3.Get connected component(2)/is graph connected/Perfect Friend
+    4.numIsland(LC)(2)/Max area of island(2)
+    5.Permiter/More than 1 island
+    6.surrounded region
+    7.heavy path *
+    8.Hamiltonian path cycle *
+    9.bfs-cycle+level printing/Level printing + shortest path/path printing
+    10.oranges rottning/wall and gates *
+    11.shortest path binary matrix
+    12.spread of infn
+    13.isbipartite 
+    iterative dfs
+
+    14.topological order
+    15.Kahn algo
+    16.course schedule-1/2-2
+    17.longest increasing path
+    18.detect cycle using dfs
+    19.kosa raju
+
+    20.prims(2)
+    21.n/w delay time
+
+    22.union find
+    23.redundant conn/no of province/no of oprn to make n/w conn
+    24.Satisfiability of eqn
+    25.lexicographically-smallest-equivalent-string
+    26.Similar string groups
+    27.journey to moon
+    28.region cut by slashes
+    29.malware spread
+    30.no of island after each oprn
+    31.
+
+    32.Kruskal
+    33.Mr President
+    34.water supply in village
+    
+
+14.Basics
+15.RSB Mask
+16.Keninghan Algo
+17.All repeating except 1
+18.All repeating except 2
+19.OneRepeating OneMissing
+
+20.Majority Element //169
+21.Majority element //229
+22.Majority element general  //gfg     
+
+======================
+4 sept
+1.missing number  //268(2)
+2.Find disappearing number //448
+3.first missing positive //41
+4.Find duplicate number(2) //287
+5.Find all duplicate in array //442  
+    
+6.Positive Negative(2)
+7.Move zeroes to end //283
+8.Binary Sort gfg
+9.Sort array by parity //905
+10.Sort colors(2)  //75
+11.Rotate Array  //189
+12.Maximize sum of rotated array(2)
+
+13.Triplet with sum btw given range
+14.Minimize max pair sum in array //1877
+15.Minimum distance to target element //1848
+16.Maximum element after decreasing and rearranging //1846
+17.Maximum product of three number //628
+18.3 pointer //ib
+
+19.Merge sort //ib
+20.Merge sort  //88
+
+21.Remove element-2
+22.Remove duplicate-2
+23.Remove duplicate 2
+
+24.Maximum unsorted subarray-2  //581
+25.Maximum distance
+    26.Maximum Distance Between a Pair of Values
+27.Partition in 3 parts
+28.perfect peak
+    29.max sum triplet
+    30.Increasing Triplet
+
+31.ArrayList(add/add(idx,val),set(idx,val),get(idx),remove(idx),size())
+32.Remove prime from list
+33.Span of Array
+34.Subarray
+35.Subset of Array
+37.Inverse of Array
+38.Linear search
+39.Ceil and Floor
+40.First and Last Index
+41.Add two Array
+42.Subtract two array
+
+43.Merge Interval  //56
+44.Meeting room I //920  lintcode
+45.Interval intersection //986
+46.Insert Interval //57
+
+======================
+5 sept
+1.Anti Diagonal
+    2.Pascal Triangle 1/2
+    3.Minimum lights to activate
+    4.Largest Number  //179
+    5.Container with most water //11
+    6.Best meeting point //912 lintcode
+    7.Min Jump with +i -i
+8.Sorted square
+9.Plus One
+    10.Minimum absolute difference
+    11.Maximum Minimum
+    12.Min step in infinite grid
+    13.Maximum Product SubArray  //152
+    14.xoring subarray
+    15.hotel Booking Possible
+    16.Leader of array
+
+======================
+6 sept
+1.vertical order(2)/vertical sum/bottom view/top view/diagonal order
+2.vertical order LC-2
+
+======================
+8 sept
+1.sum present root to leaf/ans array/all path from root to leaf/sum within range(string,array)/sum from r2L
+2.Populating next ptr 1,2 (2)
+3.Create left clone tree-2
+4.transform back-2
+5.print single child node-2
+
+======================
+9 sept
+1.diameter
+2.merge tree
+3.width of bt
+4.bt max path sum(2)
+5.construct bt(pre-in/post-in/pre-post)
+
+======================
+14 sept
+1.House robber 3
+2.Binary tree camera
+3.Serialize/Deserialize
+4.Flattern(2)
+5.BT TO DLL
+6.Increasing BST
+7.IsTree Univalue
+8.Second min node
+9.Deepest levelsum
+
+======================
+16 sept
+1.path sum(2)
+2.BST Iterator
+
+======================
+18 sept
+1.job scheduling
+2.fractional knapsack
+3.max equal sum
+4.min cost of rope
+5.max unit in truck
+6.max stock
+7.Boats to Save People
+8.Product of 3 #
+9.assign mice to hole
+10.reorganize string
+11.Bag of token
+12.Task scheduler
+13.Min arrow to burst balloon
+14.Max performance of team
+15.check psble to survive
+16.Total platform-2
+17.train stoppage
+18.Activity selection problem
+19.Disjoint set
+20.Coin change perm-2/Min coins reqd-2/
+21.Coin change combn
+
+======================
+20 sept
+1.Matrix chain mul-2/min score triang
+2.Min max value of exprn
+3.eval boolean exprn
+4.Max coin burst balloon
+5.obst-4
+6.buy n sell -1 transaction allowed,inf transaction allowed,infinite trans+fees,infinite trans+cooldown,2 tran allowed
+
+======================
+21 sept
+1.LIS-2/LDS-2/LBS/MaxSumInc/decr/bitonic subseq 
+2.Min deln for sorted
+3.Number of lis of max len
+4.Maximum Product of Word Lengths
+5.Check If a String Contains All Binary Codes of Size K
+6.Abbreviation using bits
+7.Min xor pair
+
+======================
+26 sept
+1.live streaming
+2.cap theorem
+3.caching/redis
+4.which database to choose
+5.whatsapp system design
+6.scale from 0 to 1M
+
+======================
+27 sept
+1.Union find
+2.Redundant Conn
+3.No of province
+4.No of oprn to make network connected
+5.Satisfiability of Equality Equations
+6.
+7.
+
+
+======================
+3 oct
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+

@@ -1,0 +1,164 @@
+// https://www.pepcoding.com/resources/data-structures-and-algorithms-in-java-levelup/arrays-and-strings/range_addition/ojquestion
+public static int[] range_addition(int length, int[][] queries) {
+    int[] arr = new int[length];
+
+    for (int i = 0; i < queries.length; i++) {
+        int startIndex = queries[i][0];
+        int endIndex = queries[i][1] + 1;
+
+        arr[startIndex] += queries[i][2];
+        if (endIndex < length)
+            arr[endIndex] += -(queries[i][2]);
+    }
+
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum += arr[i];
+        arr[i] = sum;
+    }
+    return arr;
+}
+
+// 598
+int maxCount(int m, int n, vector<vector<int>> &ops)
+{
+    if (ops.size() == 0)
+        return m * n; //0 ke hi saare
+
+    int to = ops.size();  //total oprn
+    int noOfElement = ops[0][0] * ops[0][1];
+    for (int i = 1; i < ops.size(); i++)
+    {
+
+        ops[i][0] = min(ops[i][0], ops[i - 1][0]);
+        ops[i][1] = min(ops[i][1], ops[i - 1][1]);
+    }
+
+    noOfElement = ops[to - 1][0] * ops[to - 1][1];
+    return noOfElement;
+}
+
+// 769
+int maxChunksToSorted(vector<int> &arr)
+{
+    int reach = 0, chunk = 0;
+    for (int i = 0; i < arr.size(); i++)
+    {
+        reach = max(reach, arr[i]);
+        if (i == reach)
+            chunk++;
+    }
+    return chunk;
+}
+
+.// 768..can save left max array
+public int maxChunksToSorted(int[] arr) {
+    int chunk = 0;
+    int n = arr.length;
+    int[] leftMax = new int[n];
+    int[] rightMin = new int[n + 1];
+
+    leftMax[0] = arr[0];
+    for (int i = 1; i < n; i++)
+        leftMax[i] = Math.max(leftMax[i - 1], arr[i]);
+
+    rightMin[n] = Integer.MAX_VALUE;
+    for (int i = n - 1; i >= 0; i--)
+        rightMin[i] = Math.min(rightMin[i + 1], arr[i]);
+
+    for (int i = 0; i < n; i++) {
+        if (leftMax[i] <= rightMin[i + 1])
+            chunk++;
+    }
+    return chunk;
+}
+
+.//532
+public int findPairs(int[] nums, int k) {
+    HashMap<Integer,Integer>map=new HashMap<>();
+    
+    for(int val:nums)
+        map.put(val,map.getOrDefault(val,0)+1);
+    
+    int count=0;
+    for(int key:map.keySet())
+    {
+        // key - k
+        if((map.containsKey(key+k) && k>0  || (k==0 && map.get(key)>1) )
+            count++;
+    }
+    return count;
+}
+
+public int findPairs_(int[] nums, int k) {
+    Arrays.sort(nums);
+    int i=0,j=1,count=0;
+    while(j<nums.length)
+    {
+        int diff=Math.abs(nums[j]-nums[i]);
+        if(diff==k)
+        {
+            count++;
+            while(++j<nums.length && nums[j]==nums[j-1]); //skip same
+        }
+        else if(diff<k)
+            j++;
+        else{
+            while(++i<nums.length && nums[i]==nums[i-1]);
+            if(i==j)j++;  //i!=j
+        }
+    }
+    
+    return count;
+}
+
+
+//1354 nc
+public boolean isPossible(int[] target) {
+    
+    long sum=0;int max=0;
+    PriorityQueue<Integer>pq=new PriorityQueue<>((a,b)->{
+        return b-a;
+    });
+    for(int i=0;i<target.length;i++)
+    {
+        sum+=target[i];
+        pq.add(target[i]);
+    }
+    
+    while(pq.peek()!=1)
+    {
+        max=pq.poll();
+        long diff=sum-max;
+
+        if(diff==1 || max==1)return true;
+        if(diff==0 || max%diff==0 || diff>=max)return false;
+
+        max%=diff;
+        sum=diff+max;
+        pq.add(max);
+    }
+    
+    return true;
+}
+
+public boolean isPossible(int[] target) {
+    
+    long sum=0;int max=0;
+    for(int i=0;i<target.length;i++)
+    {
+        sum+=target[i];
+        if(target[i]>target[max])
+            max=i;
+    }
+    
+    long diff=sum-target[max];
+    
+    if(diff==1 || target[max]==1)return true;
+    if(diff==0 || target[max]%diff==0 || diff>=target[max])return false;
+    
+    target[max]%=diff;
+    
+    return isPossible(target);
+}
+

@@ -1,0 +1,64 @@
+(I) Recursion_Basic
+    1.Print Decreasing
+    2.Print Inreasing
+    3.Print Decreasing Increasing
+    4.Print even Decreasing and odd Increasing
+    5.Factorial of number(ifelse,ternary)
+    6.Power -2method:o(n),o(logn)
+    7.ZigZag,Stack Trace
+    8.Display array,array reverse(2 method each)
+    9.Max of array(3 tarikke se line likhna)
+    10.Min of array
+    11.First,LstIndex(2 Method),AllIndices
+
+(II) RecursionType,MazePath,Subseq,TargetSum
+    12.Get stair path-2(void,return type recursion)
+    13.Get subsequence-3(return type+inc/ninc(idx,substring kaatkr))
+    14.Subset of Array [subset with duplicate]
+    15.Target sum subset-2(loop,subseq)
+16.Abbreviation
+    17.Encoding
+    18.Kpc + Kpc extension
+    19.MazePath-singleJump,MultipleJump,8dirn,8dirn+MultipleJump
+    20.Blockage qs-Flood fill,rat in a maze-single jump,MultipleJump
+    21.Longest path to reach destn
+    Tower of hanoi
+    Sequential digits
+
+(III)P&C
+    26.Permutation infinite coins(2)
+    22.Permutation of string(2)+permutation in array 46
+    31.Permutation single coin(subseq,with visited,without visited)
+    23.Permutation unique-(2-1(substring kaatkr)+1*2(prev,visitedLevel))+47 permutation in array
+    27.Combination infinite coins-2+39 (answer array of array mein dena hai)
+    24.Permutation-3 boxes 2 dis-item 2methods //k length word
+    25.Combination-3 boxes 2 sim-item 2methods //Word selection
+    28.Combination single coins-2+ duplicate present+216 (1-10 value size must be k to make target)+77-all psble combn from 1 to 10 of size k.
+    29.subsequence ib
+    30.Queen combination 1d,2d as 1d queen chooses
+    32.queen permutation 1d,queen permutation 2d as 1d
+
+    33.Word Search
+    34.Knight tour
+    35.Nqueen-Permutation,combination,(4)optimization-p&C,optimization2-remove row array,optimization 3 bits
+    36.nKnight
+
+    37.largest number at most k swap
+    38.remove invalid parentheses
+    39.Palindrome permutation
+    Palindrome partition
+    Tugofwar,k subset equal sum,k partition
+
+41.lexicographical order-2/1 lc 386
+41.lc 1823 josephus prob
+42.Pattern matching
+43.friend pairing   
+44.max score
+    45.Sudoku-3-Normal,optimization 1,2
+    46.CryptoArithmetic
+    47.word break
+    48.Crossword puzzle
+    49.Balance parentheses
+
+// =============
+  

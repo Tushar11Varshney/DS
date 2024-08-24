@@ -1,0 +1,56 @@
+Matrix
+1.Matrix Multiplication- 1.n*m p*q matrix then m!=p print invalid and return else new matrix n*q size
+                         2.Outer loop=n ->inner loop=q->initialise matrix[i][j]=0->innermost m or p->m[i][j]+=a[i][k]*b[k][j]
+
+2.Wave Traversal-1.Outer Loop on column if even column row loop top to down else row loop bottom to up 
+
+3.Spiral Traversal-1.minrow mincol at 00,maxrow maxcol at end value.Loop till count<totalElement
+                   2.Print leftcol(with condn counofEle<totalEle) print and increment count..LoopExit increment (mincol),
+                    2.2print bottom row decrement (maxrow)
+                    2.3print right col decrement (maxcol)
+                    2.4print top row increment (minrow) but innermost will be printed twice so maintain countof element.
+
+            Leetcode-Same initialisation
+                2.1print toprow first and increment minrow
+                2.2print right column and decrement maxcolumn
+                2.3print bottom row and decrement maxrow
+                2.4print left column and increment mincolumn
+            
+            Leetcode qs-while count<=totalEle Instead of printing now enter value of count in the matrix and increment count
+
+            Leetcode qs-1.totalElement=rows*col,count=0,steps=1
+                        2.loop of count<totalElement and inner loop of steps calculate coordinate row=row+dir[i][0],col..
+                            2.2 check if coordinate are within matrix if yes then add in list and increment count.
+                        3.change direction after step loop and increment step if d=0||d==2
+                        4.return result.toArray([row*col][2])
+
+4.Exit Point of Matrix-1.give dirn from east(0) to north(3)
+                    2.take i=0,j=0,d=0 loop till true 
+                        2.1 Add value of matrix with d then take mod by 4 then continue in the dirn for eg for east increment col.....after it check if  i<0 || i>length || j<0 || j>length then i++,i--,j++,j-- respectively and break;
+                    3.Print i,j
+
+5.Rotate by 90 Degree-1.transpose in only right half otherwise it become same first loop of row second of j=i 
+                      2.then reverse column by (sending in a fn li and ri ya column wala loop n/2 tak chalakr j n-j-1 se swap)
+
+6.Saddle Point(Row min col max)-1.take FLAG=0 and loop on each row and find min in each row by traversing column
+               2.Make maximum=minimum as well Traverse on the column and if maximum update then break else when inner loop finish check if max==min then print,flag=1 and break
+               3.if(Flag==0) then no saddle point so invalid input
+
+7.Search in sorted 2d matrix-1.i=0,j=n*n-1 ,take flag=0,row=i/m & column=i%m and assume as 1d matrix apply binary search
+                             2.If value found flag=1 else on loop exit check flag and print value not found
+                    M2-(start finding from top righmost corner or left bottommost corner).run till i<n && j>=0(top right)
+                        2.if value small increment row else decrement column
+
+8.Diagonal Traversal-dont use i<=j ..use gap strategy outer loop gap(gap=0;gap<n) and inner loop i=0,j=gap till j<n ;i++,j++ and print
+
+9.Rotate array-1.write reverse function-swap li(left index) and ri till li<ri do li++ ri-- each time
+               2.rotate=(rotate%k+k)%k // rotate=rotate%k if negative rotate+=arr.length
+               3.Now two method to rotate-rotate full array->rotate(0,rotate-1)->rotate(rotate,a.length-1)
+                
+                M2-rotate(0,a.length-rotate) & rotate(a.length-rotate+1,a.length-1) & rotate full array
+
+10.Shell Rotate-1.(take starting row,col=shell-1 and ending row=a.length-shell col=a[0].length-shell)
+                2.fill oned from shell(take array of size 2*((erow-srow)+(ecolumn-scolumn))) and variable k and put value increment k
+                   same as spiral traversal 1
+                3.then rotate
+                4.fill shell from 1d

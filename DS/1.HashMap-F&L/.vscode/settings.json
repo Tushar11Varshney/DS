@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "ostream": "cpp"
+    },
+    "files.exclude": {
+        "**/.cpp": true,
+        "**/.java": true,
+        "**/.txt": true
+    }
+}

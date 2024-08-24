@@ -1,0 +1,123 @@
+*Dp mein initialise with value which can not be a answer but if suppose taking -1 then check that -1 does not affect answer
+
+16-aug
+208. Implement Trie (Prefix Tree)
+211. Design Add and Search Words Data Structure
+421. Maximum XOR of Two Numbers in an Array
+212. Word Search 2
+
+18 Aug
+Palindromic Substring/Count/Longest
+Longest palindromic subsequence/generate ans-using string dp,linkedlist,variable
+Distinct Subseq
+Longest Common subseq/If s2 subseq of s1/Uncrossed Lines
+Minimum operation to make string equal
+Longest common substring
+Distinct subseq 2
+
+27aug
+1.TARGET sum bst-4
+2.Validate bst-2 
+3.Largest bst
+4.size/sum/max(2)/min(2)/search(2)/mindepth(leetcode)/maxdepth/insert(2)
+5.sorted array to bst(2)
+6.replace sum of larger
+7.range in bst(2)
+8.lca in bst(2)
+9.Levelorder(4)
+10.right side/left side/zigzag/average/levelorder bottom/maxlevelSum/bottom left val
+
+
+
+30 Aug
+1.costruct bt/display
+2.update bal and height
+3.Clone bt
+4.flip eqvn(2)
+5.construct mbt
+6.generate bst
+7.possible fbt
+
+8.Hashmap/generic
+9.Hashset
+
+
+
+11.Find/Node to root path(2)/root to node dist(edge)
+12.lca
+13.All node at dist k(2)
+14.preorder/postorder(2)
+15.Invert Tree
+16.same tree/mirror tree
+17.Longest univalue path tree
+18.Count univalue subtree
+19.Longest consc-2
+20.Longest consc2
+
+2 sept
+1.boundary traversal
+2.Delete leave with given val
+3.step-step dirn from binary node to other
+
+3 sept
+1.dfs/print all path dfs
+2.smallest,largest,ceil,floor,kth largest
+3.Get connected component/is graph connected
+4.numIsland(LC)/Max area of island/Perfect Friend
+5.Permiter/More than 1 island
+6.surrounded region
+7.heavy path *
+8.Hamiltonian path cycle *
+
+9.bfs-cycle+level printing/printing/path printing/gcc
+11.oranges rottning/wall and gates *
+11.shortest path binary matrix
+12.spread of infn
+13.isbipartite
+
+14.Basics
+15.RSB Mask
+16.Keninghan Algo
+17.All repeating except 1
+18.All repeating except 2
+19.OneRepeating OneMissing
+
+
+
+
+13.Triplet with sum btw given range
+14.Minimize max pair sum in array //1877
+15.Minimum distance to target element //1848
+16.Maximum element after decreasing and rearranging //1846
+17.Maximum product of three number //628
+18.3 pointer //ib
+
+
+31.ArrayList(add/add(idx,val),set(idx,val),get(idx),remove(idx),size())
+32.Remove prime from list
+33.Span of Array
+34.Subarray
+35.Subset of Array
+37.Inverse of Array
+38.Linear search
+39.Ceil and Floor
+40.First and Last Index
+41.Add two Array
+42.Subtract two array
+
+
+5 sept
+3.Minimum lights to activate
+4.Largest Number  //179
+5.Container with most water //11
+6.Best meeting point //912 lintcode
+7.Min Jump with +i -i
+    8.Sorted square
+    9.Plus One
+10.Minimum absolute difference
+11.Maximum Minimum
+12.Min step in infinite grid
+13.Maximum Product SubArray  //152
+14.xoring subarray
+15.hotel Booking Possible
+16.Leader of array

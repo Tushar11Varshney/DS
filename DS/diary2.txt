@@ -1,0 +1,47 @@
+//Number System
+1.Any base to decimal+decimal to any base+any base to any base,Leetcode 504 convertToBase7
+2.Addition in any System
+3.Add binary string //67
+4.Subtraction in any System
+5.Multiplication in any System
+6.Multiply String(2)   //43
+
+//====Array
+53.Range addition,Range addition 2 //598 G
+54.Max chunk to make sorted-1,2 //768 ,769  G
+56.Find pair //512 G
+55.Product of array except self(2)  //238 G
+    Maximum abs difference
+    61.Wiggle sort  //lintcode
+    62.wiggle sort 2
+
+
+
+    25.Max consecutive 1(2) //485
+26.Maximum sliding window  //239 B
+    27.SubArray sum equal K //560
+    32.Binary subarray with sum(3) //930
+    30.Longest & count subarray with equal 0&1 //525 & gfg  
+    31.Longest & count of subarray div by k(2)  //gfg //974
+28.Max consecutive 1 part 3 //1004 B
+29.total fruit into basket  //904 B
+35.Rabbits in forest  //781 B
+33.Number of nice subarray //1248
+    34.Number of subarray with K distinct element //IB
+
+    62.Next Permutation array //31
+    63.Next Permutation Number(2) //60
+    64.Next greater element 3(2) //556
+    65.Get Min Swap to reach kth Smallest Number //1850 
+
+    Max oprn to pair k (2)
+    Max score obtained from cards
+    merge sort w/o space
+    min oprn to reduce x to zero
+    maximum unique subarray
+    minimum total from triangle
+    range sum query
+    circular array kadane
+    furthestBuilding
+    set zeroes
+

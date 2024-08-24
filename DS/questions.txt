@@ -1,0 +1,50 @@
+StringBuilder(insert/append/setChar,deleteChar,delete) Vs String
+All substring
+Palindromic Substring
+Fizzbuzz    
+Replace digit at even posn                                   [c++/java-tc]
+String with ascii difference                                 [string mein add char and then number]
+Toggle Case(2)  
+Rotate String(2)                                          
+Amazing subarray/substring                                   [mod]
+Check if word equal summation of 2 word
+
+Is Palindrome
+Palindrome after removing one char
+Compare Version
+Maximum value after insertion   
+Roman to Integer(2)
+Permutation of String
+Longest common prefix(2)    
+.Long Pressed Name
+Count n say 
+String Compression(2 type)
+
+Length of last word(2)
+Valid Ip Address
+Valid Number
+
+Find common char
+.Reverse word(2)
+.atoi
+Min insertion steps to make string palindrome
+
+Length of longest substring without repeating char
+Longest substring with two/k distinct
+Substrings of Size Three with Distinct Characters(2)
+Minimum Window fn/Smallest string which contain all distinct char of given string
+Maximum vowel in k length(2)
+Longer Contiguous Segments of Ones than Zeros
+Remove Consecutive Characters of particular length 
+
+Longest PS
+Longest happy prefix
+Minimum append for palindrome
+.Str fn *
+.Repeated substring pattern *
+.Repeated string match *
+
+Implement Trie
+Design Add and Search Words Data Structure
+Suggested Words
+

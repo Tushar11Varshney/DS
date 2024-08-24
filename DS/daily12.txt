@@ -1,0 +1,51 @@
+*Dp mein initialise with value which can not be a answer but if suppose taking -1 then check that -1 does not affect answer
+
+16-aug
+208. Implement Trie (Prefix Tree)
+211. Design Add and Search Words Data Structure
+421. Maximum XOR of Two Numbers in an Array
+212. Word Search 2
+
+18 Aug
+Palindromic Substring/Count/Longest
+Longest palindromic subsequence/generate ans-using string dp,linkedlist,variable
+Distinct Subseq
+Longest Common subseq/If s2 subseq of s1/Uncrossed Lines
+Minimum operation to make string equal
+Longest common substring
+Distinct subseq 2
+
+27aug
+1.TARGET sum bst-4
+2.Validate bst-2 
+3.Largest bst
+4.size/sum/max(2)/min(2)/search(2)/mindepth(leetcode)/maxdepth/insert(2)
+5.sorted array to bst(2)
+6.replace sum of larger
+7.range in bst(2)
+8.lca in bst(2)
+9.Levelorder(4)
+10.right side/left side/zigzag/average/levelorder bottom/maxlevelSum/bottom left val
+
+
+
+30 Aug
+1.costruct bt/display
+2.update bal and height
+3.Clone bt
+4.flip eqvn(2)
+5.construct mbt
+6.generate bst
+7.possible fbt
+
+8.Hashmap/generic
+9.Hashset
+
+
+11.Find/Node to root path(2)/root to node dist(edge)
+12.lca
+13.All node at dist k(2)
+14.preorder/postorder(2)
+15.Invert Tree
+16.same tree/mirror tree
+

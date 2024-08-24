@@ -1,0 +1,512 @@
+1.Construct Binary Tree-1.Given:nodes ki value ki aur null ki(Integer arr[]) 
+                2.Make pair class(node,state),take a stack of pair
+                3.Initially insert root=arr[0] state 1
+                4.run till stack size>0
+                        4.1)if state 1 -->increment index if arr[idx]!=null-->insert in stack with state 1,attached the new node(arr[idx],null,null) with left,if null-->attach null to left,increment state
+                        4.2)if state 2 -->increment index if arr[idx]!=null-->insert in stack with state 1,attached the new node with right,if null-->attach null to right,increment state.
+                        4.3)if state 3 then pop. 
+                5.loop exit return root.
+
+2.Display-1.node null return
+          2.StringBuilder lo 2.1append . if node.left==null and value if not null
+                             2.2append arrow+node data+arrow
+                             2.3append . if node.right==null and value if not null
+          3.call to left,right
+
+3.Euler path-1.node null return
+             2.print(node value+" in preorder)
+             3.call left
+             4.print(node value+" in inorder)
+             5.call right
+             6.print(node value+" in postorder)
+
+4.LC 110-Height-edges(default-x),nodes(x+1)
+        1.node null return 0/-1
+        2.return max(height of leftsubtree,height of rightsubtree)+1
+
+5.Size-1.(node null return 0)return size of leftsubtree+size of rightsubtree +1
+
+6.Maximum-1.node null return (-infinity)
+        2.return max of leftSubtree(recursively call),max of rightSubtree(find recursively call),root value
+
+7.Sum-1.node null return 0
+      2.return sum of leftSubtree(recursively call),sum of rightSubtree(find recursively call)+root value
+
+8.Find_BT-1.if root null return false
+        2.root==data return true
+        3.return find(root.left)||find(root.right)
+
+updateBalHeight fn-1.leftH,rightH -1 (single node bf=0)
+                   2.if leftNode not null calculate leftH,same rightNode
+                   3.if bf(leftH-rightH)>=-1 && <=-1 return t else return f
+9.IsBalanced BT-1.root null return true
+                2.call on leftSubtree,rightSubtree IsBalanced
+                3.if leftSubtree,rightSubtree balanced then return updateBalHeight else return f
+        (return IsBalanced(root.left)&&IsBalanced(root.right)&&updateBalHeight(root))
+
+BST-Proof for height of BST
+1.MinDepth-1.root null r->0
+           2.calc leftH,rightH recursively
+           3.3.1 if leftH!=0 && rightH!=0 return min(leftH,rightH)+1
+             3.2 if leftH!=0 return leftH+1
+             3.3 if rightH!=0 return rightH+1
+
+2(2).Maximum-1.while node.right!=null go to node right ,return node
+          2 method.recursively-if node.right!=null call node right else return node
+
+3(2).Minimum-1.while node.left!=null go to node left ,return node
+          2method .recursively-if node.left!=null call node left else return node
+
+4(2).Search in BST-1.root null return null
+                2.root data==val return root
+                3.root val < val search in right subtree recursively
+                4.else sr->.learch in left subtree recursively
+
+                M-2:1.while root not null 
+                    2.1 all step same as in recursive but here dont call here point root accordingly 
+                    3.return null if not found
+
+5(2).Insert into BST-M1 recursively-if root null return newNode
+                                2.root.val<=data call on left side and store the node received on left
+                                3.else call on right side and store the node received on right
+                                4.return root
+                 
+                 M2 iterative-1.Take prev=null and curr=root and make newNode
+                              2.while curr!=null store curr in prev and move accordingly if value less or high
+                              3.if prev null =>means no node till now so return newNode
+                              4.else attach the newNode accordingly and return root
+
+6.Delete in BST-1.root null r->null
+                2.if root.val<data call on leftside and store on root left else if same for right side
+                3.when data found if check ifany left/right null..agr dono koi sa bhi
+                4.find inorder predecessor by calling max on foundNode.left and replace value and now attached on root.left=call(root.left,data)
+                5.return root
+
+9.LCA-1.curr=root
+      2.while curr!=null point at which cant decide whether to go left(if both value small than current go left) or right(if both value big than current go right) break and return node.
+
+10.(2)Sorted Array to BST-Pass Indexes
+                       1.if li>ri r->null 
+                       2.calculate mid and make midNode attach on midNode left by calling (si,mid-1),attach on midNode right by calling (mid+1,ei)
+                       3.return midNode
+                       M2-or make leftTree,rightTree,and then make midNode (value,leftTree,rightTree) and r->midNode
+
+Sorted List to BST-1.if h->N r->N || h->N==N r->new Tn(head.val)
+                2.find midNode..break connection
+                3.root.left=call(head)..root.right=call(mid.next)
+                4.r->root
+
+11.Replace with sum of larger-1.iterate inorder from right side and if root->null return
+                              2.btw code-store orginal value,change node value with sum,add original value in sum
+
+12(2).Range in BST-M1-do inorder traversal and add if value in range
+                M2-1.if root null return
+                   2.if both value less than root value go to left else if both value greater go to right else do inorder traversal and add its value in btw
+
+13(4).Target sum pair-M1-O(nlogn)time and Space O(logn)1.root null return
+                   2.travel in inorder
+                   3.middle part-find complement and if value<complement then find if complement exist or not if exist then print
+
+                   M2-O(n) & O(n)-store in inorder and take left right and do as in array
+                   M3-O(n) time O(logn) space-1.Make class(node ,state)
+                                           2.Initially push root in both stack
+                                           3.Node li,ri take value from leftInorder and rightInorder
+                                           3.while(li data<ri data)
+                                                3.1 if both values equal target print and take next li,ri value
+                                                3.2 if value greater than target then ri next value
+                                                3.3 else li next value
+                                          (LeftInorder-while stack size>0 if state 1 add if leftnode exist and increment stat..if state 2 add if rightNode exist and incrment state and return node
+                                          if state 3 pop)
+                                          RightInorder-in state 1 add right not left and vice versa for state 2
+                    M3 way 2-1.make 2 stack and insertAlleft fn and insertRight fn..
+                             2.while s1.top.data<s2.top.data if sum==target return true elseif sum>k remove from stack and call insert all right(node.left)
+                             3.else remove from stack and call insert all left(node.right)
+
+//BT
+27(2).NodeToRootPath-Same as Find_BT just add in arrayList also.(void type)
+        M2-1.if root==null return empty arrayList
+        2. if root==data return make arraylist and add data in it and return al.
+        3.get al by calling node.left if al.size > 0 then add node data in it and return this al
+        4.get al by calling node.right if al.size > 0 then add node data in it and return this al
+        5.return empty arrayList
+
+28.LCA-Same logic
+
+29.RootToNodeDistance-1.node null return -1
+                2.node data==data return 0
+                3.get leftAns by calling on leftTree if leftAns not -1 return leftAns+1
+                4.get rightAns by calling on rightTree if rightAns not -1 return rightAns+1
+                5.return -1
+
+30(2).All Node at Distance K-1.get a path to the node in a al.
+                        2.Take blockNode=null;
+                        3.Traverse the path and call printDown(node,blockNode,depth(K-i),ans)
+                                3.2 blockNode=path[i]
+                        printDown-i)if node null||node==blockNode||depth<0 return
+                                ii)if depth==0 add in ans
+                                iii)call on left,call on right(for both depth-1)
+                        4.return ans
+                
+                M2(Optimized)-1.if node null return -1
+                        2.if data found printKDown(K,null)return 1
+                        3.call on left if left!=-1 printKDown(K-left,blockNode(node.left)) and return left+1
+                        4.call on right if right!=-1 printKDown(K-right,blockNode(node.right)) and return right+1
+                        5.return -1
+
+31(2).BurningTree-1.take path and height
+               2.Loop from d=0 to d<=h take new list and new prev=null in each itrn
+                 2.2Traverse path array and if(d-i>=0)call printDown(d-i,blockNode) and change blockNode else break and print list
+                M2-same as in generic tree but also add if root null r->-1...and this tym ldepth and rdepth(bcz here no array of children)
+
+32.Structurally Unique BST-catalan Number-1.dp[n+1] for 0 and 1 value is 1
+                                          2.loop from 2 to<=n nd inner loop from 0 to <i
+                                                dp[i]+=dp[j]*dp[i-j-1]
+                                          3.r->dp[n]
+
+33(4).Diameter of BT/BST-M1-1.root null return 0
+                        2.calculate node.left and node.right Diamter
+                        3.calculate node.left height and node.right height
+                        4.return max(max(leftD,rightD),leftH+rightH+2)
+                
+                M2-if root null r->{-1,-1}
+                2.call for left[] and right[]
+                3.make ans[] and calculate ans[0],ans[1]
+                4.return ans
+                
+                M3-Store max of leftD,rightD in maxDia(make global variable)
+                2.if node==null r->-1
+                3.call for leftH,rightH
+                4.maxDia=max(maxDia,leftH+2+rightH)
+                5.return max(leftH,rightH)+1
+
+                M4-pass 1size array instead of global variable
+
+34.PreOrder/In(add in btw call)/Post(add after both call)-make ans array pass in helper fn
+        2.if node null return
+        3.add in ans array and call for left and right side
+
+35.Univalue Tree-1.root null true
+                 2.root!=data r->f
+                 3.r->UnivalueTree(root.left) && UnivalueTree(root.right)
+
+36.Iterative traversal-Make pair class(node,state)
+                2.make stack and insert root
+                3.run till stack size>0 take p=top() if p state==1 add in pre ,if left not null add in stack with state 1,increment p.state 
+                3.2if p state==2 add in inorder ,if right not null add in stack with state 1,increment p.state 
+                3.3 if p state==3 add in post and pop
+
+37.(5Q)Root to leaf pathSum-1.root==null return f;
+                        2.if(root.left==null && root.right==null && TargetSum-root.val==0)r->t
+                        3.r->call(root.left,target-root.val)||call(root.right,target-root.val)
+
+                        4.if result bnakr dena hai then pass 2d list and 1d list.. in 2nd base case make baseList and download and add value and add in result...before call addinSmallAns and after both call remove.
+
+                        5.For sum in range question in 2nd base case if(r.left==null && r.right==null) add in sum variable then check if lies then add in result else return.(root==null return),instead of list can take string
+                        
+                        6.(Ques.)Sum root to leaf number-1.take a list and pass in helper fn and add element in pre and remove in post and on reaching leaf node add in list and add the number in sum variable using number creating method and remove the element from list.
+
+38.Maximum Path sum btw two leaves-(3 case)1.make global variable maxL2L=-1e9(stores lst_ll,rst_ll)
+                                  2.if(root==null)return -1e9
+                                  3.if(root.left==null && root.right==null)r->root.data
+                                  4.call for leftNodeToLeaf,rightNodeToLeaf
+                                  5.Update when root.left!=N && root.right!=N
+                                        maxL2L=max(maxL2L,rightNodeToLeaf+leftNodeToLeaf+root.data)
+                                  6.r->max(leftNodeToLeaf,rightNodeToLeaf)+root.data
+
+39.(2)Maximum sum from node to node-(6 case(2+4))1.make maxNTN=0 gv(stores lst_nn,rst_nn)  //left subtree mein node to node`
+                                2.call for leftNTN,rightNTN  //leftNode to node
+                                3.rootToNode=max(leftNTN,rightNTN)+root.data
+                                4.maxNTN=MAX(maxNTN,rootToNode,ROOT.VAL,leftNTN+root.data+rightNTN)
+                                5.return max(rootToNode,root.val)
+        M2-Make class{rootToNode,nodetonode} root==null return new pair()
+        2.call for leftSubtreeMax(lstm),rightSubtreeMax(rstm)
+        3.make myans pair,myans.rootToNode=max(max(lstm.r2n,rstm.r2n)+root.dta,root.data)
+                         myans.nodeToNode=max(6 case-lstm_n2n,rstm_n2n,myans.rootTonode,lstm_r2n+root.data+rstm_r2n)
+
+40.(2)Validate Bst-1.make pair class(isBST,max,min)
+                2.root null return new pair(true,-1e13,1e13)
+                3.call for leftSubtree,rightSubTree
+                4.myans.isbst=lst.isbst & rst.isBst & lst.max<root.val & root.val<rst.min
+                5.if(!myans.isbst)r->f else calc myans(min,max){myans.min=min(root.val,leftsubtree.min)} and r->myans
+        
+        M2-take prevNode=-1e13
+        2.root==null r->t
+        3.traverse in inorder and do as if in array if(!fn(root.left))r->f
+        4.if(prevNode>=root.data)r->f prevNode=root.val
+        5.if(!fn(root.right))r->f
+        6.r->t
+
+41.Largest BST-1.make pair(isbst,max,min,size=0,root=null)
+               2.call for leftSubtree(lst),rightSubtree(rst)
+               3.calc isBst,max=max(max(lst.max,rst.max),root.val),min for myans
+               4.if(res.isBSt){res.root=root,res.size=lst.size+rst.size+1},else if(lst.size>rst.size)else myans={rst.size,root=rst.root}
+
+42.remove leaves-1.root null r->null
+                2.root.left==null && root.right==null r->null
+                3.tree traverse(Call for root.left=left and root.right=right)
+
+43.sum of left leaves-1.root null return;
+                      2.if(isNodeLeftleaf(root.left))then add=>{isNodeLeftleaf fn if r->null r->f
+                      if r.l==n && r.r==n r->t else r->f}
+                      3.tree traverse(Call for left and right)
+
+44.Invert Tree-1.root null return leaf node pr return 
+               2.postorder=>{work swap pointers of left and right}
+
+45.SameTree-if p null || q null return p==q
+           2.if p.val!=q.val r->f
+           3.r call(p.left,q.left)&&call(p.right,q.right)
+
+46.Merge Tree-1.root1 null r->root2,root2 null r->root1
+              2.root1.val+=root2.val
+              3.root1.left=call(root1.left,root2.left)
+              4.root1.right=call(root1.right,root2.right) r->root1
+
+47.Symmteric Tree(check mirror of itself)-same as Same Tree..3.r call(p.left,q.right) && call(p.right,q.left)
+
+48.Get all path-1.helper fn->root null return,if leaf then add leaf value in string then add it in result
+                2.str+=root.val+"->",traverse the tree
+
+49.Unique BST-1.make list 2.start>end add null in list and r->list
+              3.for loop i=start till i<=end call for leftTreelist(s,i-1),and rightTreeList(i+1,e)
+                3.1 for loop on ltl and inner on rtl make new node and add in list
+              4.r->list
+   All possible fbt-1...if(si==ei){new node and add in list..r->list}
+                    2.loop(i=si+1;i<ei;i+=2)
+
+51.Maximum width of bt-1.make class{node,number}
+                        2.take a queue and insert root with 1 number
+                        3.while(queue.size()!=0) take size and take first node of each level and pair curr=null
+                           3.1 while(size-->0)curr nikalo and add children in queue(left with 2*num
+                           and right with 2*num+1)
+                           3.2 after loop exit update maxWidth
+                        4.return maxWidth
+
+52.Level Order Traversal-1.Take queue//LinkedList(addLast,removeFirst),add root
+                        2.run Till queue size become 0                      
+                        2.1 remove from queue,print and push left and right child if not null
+
+53(3).Level Order Level Wise-M1 1.Take two queue queue,childQueue and level=0 and print level 0.
+                        2.Same as level order but push in childQueue now..in loop when que.size become 0 and childQueue size not 0 then increment level,print and swap pointers of queue and childQueue.
+                
+                M2-1.Take queue,add root and null
+                2.run till que.size!=1 remove print and add child 
+                        2.1 check if que.getFirst is null then check if que.size!=1 {incrment level ,print and remove null from front addtoLast}.....or if(rn null/not null)
+                
+                M3-1.Take queue add root
+                2.run till queue.size!=0 calc size,print Level
+                        2.1while(size-->0)take out,print,addChild 
+                3.increment level
+
+54.RightView-Same as levelWise M-3 just add last value of each level in list
+55.LeftView-Same as levelWise M-3 just add first value of each level in list
+56.ZigZagLevel-Same as levelWise M-3 just if level%2!=0 then Collections.reverse(list)
+
+57.LongestZigZagPath-root null return {forward path /,backward \,maxLen} {-1,-1,-1}
+                2.Call for left,right
+                3.create myans,myans[0]=left[1]+1,myans[1]=right[0]+1,myans[2]=max(left[2],right[2],myans[0],myans[1])
+                
+58.AverageofLevels-1.same as in m3 take double sum variable add value of all in each sum/s(size of level) and add in list.
+59.LevelOrderBottom-same as in m3 at last just reverse the whole list.
+60.Bottom left Value-same as in levelView but in this just update everytime the variable of leftValue by first value of each level
+(Q.)Maximum sum with min level-calculate sum at each level (LOM3) and if sum>prevSum update sum and level
+
+61(2).Vertical Order Traversal-1.make class verticalPair{node,hl}
+                        2.Take hashmap(horizontal Level VS List<Integer>) and queue add root with hl=0
+                        3.run till que.size!=0 take out and if in map hl not present add arrayList.Put the takenout value in the list against hl.
+                        4.add left right child if not null
+                        5.calculate max,min hl
+                        6.exit loop display minX<=maxX 
+        M2-calculate width(root= null return ,call left with hl-1 right with hl+1,update arr[0]=min(arr[0],hl) and arr[1])
+        2.Take 2d array and width=arr[1]-arr[0]+1 add arraylist in 2d list(sz=total width) and add root with hl (-arr[0])
+        3.same as m1
+
+62.Vertical Sum-add value in the list at its horizonal level index
+
+63.Bottom View-Update value each time at its hl.
+
+64.Top View-Update value only 1 time can take boolean VisRes array or take a value which is not present in tree.
+
+65(2).Diagonal Traversal-if antidiagonal then leftChild with hl-1,righ child with same hl
+                         if diagonal then leftChild with hl,right child with  hl-1
+
+66(2).VerticalTraversal Leetcode-pair class,take two min pq(queue,childQueue),add in respective horizontal level,add left(hl-1) right(hl+1) child in child queue,when queue size become 0 swap.
+        M2-vertical pair(val,x,y)Only 1 min priority queue first decide on basis on y then if equal then decide on basis of value.
+
+67(2).Left Cloned Tree-M1-1.preorder-root null return null.
+                2.Make new node with value node.data,left child->node.left and right null
+                3.call on node.left.left,node.right
+                4.r->node
+        
+        M2-postorder-1/2.get left cloned root,and rcr by calling node.left and node.right
+                     3.make new node(node.data,lcr,null),node.left=newNode,node.right=rcr
+
+68.Transform Back-1.root null return null
+                2.call on lcr(node.left.left) and rcr(node.right)
+                3.node.left=lcr,node.right=rcr,r->node
+
+69(2).Print single child nodes-root null return
+                           if only one of the child present then print that child which is present 
+                           call on root.left and root.right
+        m2->can also do by passing parent and checking if parent is not null and only one child present then print and then by calling on node left and right
+
+70.Construct from pre and inorder-1.if psi>pei then r->null
+                                2.take idx and search pre[psi] in inorder[idx]
+                                3.make a new node with value pre[psi]..& find tnel
+                                4.make node.left=call(psi+1,psi+tnel,isi,idx-1)
+                                make node.right=call(psi+tnel+1,pei,idx+1,iei)
+                                5.return node
+
+71.Construct from post and inorder-1/2-search post[pei] in inorder[idx]/3 value post[pei] 
+                                4.make node.left=call(psi,psi+tnel-1,isi,idx-1)
+                                make node.right=call(psi+tnel,pei-1,idx+1,iei).5
+
+72.Construct from pre and post-1.if psi>pei r->null
+                                2.make newnode pre[psi]
+                                3.if psi==pei return newNode
+                                4.search pre[psi+1] in post[idx=posi]
+                                5.node.left=call(psi+1,psi+tnel,posi,idx)
+                                node.right=call(psi+tnel+1,pei,idx+1,poei-1)
+                                6.r->node
+
+73.House Robber-1.root null r->{0,0} //max amt by robbing,max amt by not robbing
+                2.call for left and right 
+                3.myans[0]=left not rob+right not rob+root value
+                4.myans[1]=max(left rob,left not rob)+max(right not rob+right rob)
+
+74.(2)Number of path that sum to Target-1.take hashmap(0,1)  //sum vs freq
+                                   2.root->n r
+                                   3.calc preSum..calc ans..inc freq in hashmap
+                                   4.traverse tree
+                                   5.in postorder decr freq and remove if freq=0
+        
+        M2-main fn-root->n r->0...call for helper(root)+main(root.left)+main(root.right)
+                2.r->null r->0..if ts=r.val res++ res+=leftcall..res+=rightcall..r->res
+
+75)Camera reqd-1.root null r->m cvrd(0)
+                2.call for left and right
+                3.if any req camera c++ r->have camera(l==-1||r==-1)
+                4.if any has camera r->m cvrd(l==1||r==1)
+                5.r->camera req(-1)
+                6.main fn if ans==-1 r->c+1 else c
+
+76)Binary Tree to dll-root=null r->null 
+                      1.take dummy and prev..do inorder traversal...
+                      2.btw code join..
+                      3.takeout head..break dummy right and root link..r->head
+
+77)(2)Flattern Bt-o(n^2)-1.r->null r 
+                         2.call for left nd right nd find tail by passing fn(root.left->returns rightmost node(bc:root==null r->N)) and join links
+                M2-helper fn-1.root null || root no chil r->root
+                  2.lTail and rTail..if leftTail not null join..r->rtail if not null else r->lTail
+
+78)Serialize-Deserialize-1:take a sb and do preorder traversal in helper fn.(sb.append(r.val+" "))
+                        2.data.split(" ")on string and make number array
+                        3.make global idx and make tree(node=arr[i++])..catch on node.left and right
+                        4.bc:if(a[i] contain value not present) incr index r->null
+
+79)Increasing order Search Tree-1.dummy node...helper fn do inorder traversal
+                                2.in btw code root.left=null and join
+
+80)Pre/Succ/Ceil/Floor in bt-1.make pair class(p,suc,pred,ce,fl)
+                            2.root->n r;
+                            3.r.val<k update floor max()
+                            4.r.val>k update ceil min()
+                            5.call for left...right
+                            6.btw code:if val=key and pred was null set pred=pair.prev
+                            7.if prev not null and prev val=key then set suc=root.....pair.prev=root
+
+81)Pre/succ in bst-1.write code if left subtree/right subtree exist
+                   2.whenever go left set suc
+                   3.whenever go right set pre
+
+82)Recover Tree-1.helper fn-root->null r->t
+                2.write inorder code if(!(root.left))r->f...right
+                3.in btw code if(prev not null and defect){make b=root,if a null update a with prev else r->f}
+                4.r->t
+
+83)BST iterator-1.take a stack and in constructor pass root to addAllLeft(add in stack and move to left till not null) fn
+                2.next()-pop out node and if right exist then pass to addAllLeft
+                3.return st.sz()!=0
+
+84)Inorder Successor bst-1.when right tree exist move to right and move till left exist
+                        2.else move till parent not null and parent left!=node =>node=node.p
+                        3.r->node.p
+
+85)Morris Inorder-1.take curr and find curr left..if null then print and move curr to right
+                2.else find rightmost node(next.r!=N && next.r!=n)next=next.right r->n
+                        2.1 if rightmost.right null create link and move left
+                        2.2 else break link print and move right
+        preorder-one change dont print when breaking link..print when creating link
+
+86)KthSmallest-1.take a stack and insertallLeft
+                2.till k-->1 pop insertAlleft(root.right)
+                3.r->st.top
+
+        M2-when we were printing instead of printing if k==1 return curr.value else k--
+
+87)Populating Next pointer 1/2-M1:do levelOrderTraversal if size 1 point rn.next to null else rn.next to peak decrement size at last.
+                m2 q.1)1.on leaf node return
+                       2.point root left next->root right
+                       3.if root next not null then point root right next to root next left
+                
+                m2 q.2)1.add root==null r
+                2.check if root left exist(bcz not perfect bt)
+                        2.1 if root right exist then root left next to root right
+                        2.2  root left next=fun(root next)
+                3. root right not null root right=fun(root.next)
+                4.traverse right to left
+                5.helper fn fun-node null r->N..if root left exist r->root.left else if for right else fun(root.next)
+
+88)Duplicate SubTree-1.root null r->"X"
+                    2.call for left and right
+                    3.make res-root val+"-"+left and right
+                    4.add in map if freq become 2 add root in ans..r->res
+
+89)Flip eq of bt-M1:helper fn==bc:if root null or leaf node return
+                2.if root left value not null add in map(root left val,root val) same for right
+                3.traverse in pre
+           main fn-bc:if both root null r->T..if anyone null r-->f..send root1,2 to map fn
+                2.compare size not equal r->false
+                3.else compare parent value of both map not equal r->f
+                4.at last r->t
+
+        m2-if both root N->r->t
+           2.if anyone null r->false
+           3.if val not equal r->false
+           4.r->call(l,l)&&call(r,r) || call(l,r)&&call(r,l)
+
+90)Delete and return forest-main fn-take hashset and add all values in hs..call ..and if hs dont contain root then add root in ans.
+                        2.root->n r->N
+                          2.1 postorder-catch in root left and right by calling fn
+                          2.2 if hashset contain root value then add root left and right if not null and r->N
+                          2.3 r->root
+
+91)Construct Maximum Bt-1.bc:si>ei r->N...si==ei r->newNode
+                        2.find maxIndex..make a newNode of maxIndex value
+                        3.catch & call left(si,mi-1)..catch & call right(mi+1.ei)..r->root
+
+92)CountNodes-1.if root=null r->0
+              2.count leftDepth and rightDepth if equal r->2^ll-1
+              3.1+c(r.left)+c(r.right)
+
+93)isComplete Tree-1.pass(0,countNodes o(n)->root==null r->0...r->1+c(r.left)+c(r.right))
+                   2.helper fn:if(root==null)r->t..i>=n r->f...r->helper(r.l)&helper(r.r)
+
+94)Copy Node with Random Ptrs-1.take a hashmap and put originalNode vs copyNode traverse the tree 
+                              2.connectClonedNodes-get address of clonedNodes from map...make connections...traverse tree
+                              3.r->map.get(tree)
+
+95)Count Univalue subtree-1.pair{#,amI}..2.bc:root=N r->{0,t} & leaf r->{1,t}
+                          2.6 cases-if(right left both not null){both univalue check with root->{l#+r#+1,t}..else{l#+r#,f}}
+                                    if(left!=N){if same value as of root->{l#+1,t}else{l#,f}}..similaryly right
+
+96)Longest Cons Seq 1-1.make global max or arr of size 1..pass target as root
+                      2.root==null r->0
+                      3.if(root.val=target)c++ else c=1..update max and call(r.l,r.val+1 as target)..right(r.r,r.val+1)
+
+97)Longest Cons 2-1.Take ml=0
+                  2.root null {0,0} leaf {!1,1}
+                  3.call for left[],right[]
+                  4.make myans{1,1}..if root left not null check if decreasing from child to node then decr+1..similarly increasing..similary for right
+                  5.update ml(max(ml,ans[0]_ans[1]-1))

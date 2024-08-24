@@ -1,0 +1,119 @@
+16-aug
+1. Implement Trie (Prefix Tree)
+2. Design Add and Search Words Data Structure
+3. Maximum XOR of Two Numbers in an Array
+4. Word Search 2
+
+======================
+3 oct
+1.Asteroid collision     *
+2.Balanced bracket(2)
+3.Minimum insertion to balance a par string(2)
+4.Minimum remove to make valid string *
+5.Redundant braces 
+6.Longest valid Parentheses *
+7..Remove outer Parentheses(2)
+8.Reverse Paren *
+9.decode string
+10.Min Bracket reversal to make exp balanced
+11.Min insertion[ ()) ]  *
+12.Score of Parentheses
+13.NGOR(3),NSOR(2),NSOL(2),NGOL(2)
+14.Daily Temperatures
+15.Stock Span(2 varin)  *
+16.Maximum abs diff
+17.NGOR Circular
+18.No of valid subarray  //nsr 
+19.Trapping rain water(3) //ngr *
+20.Largest Rectangle Area(2)  //nsr *
+21.Maximal Rectangle  *
+22.Validate stack Sequence(2)
+
+======================
+6 oct
+1.Find Celebrity
+2.Smallest Number following pattern  
+3.Merge overlapping interval
+4.Remove all adjacent duplicate(2)
+5.Make string great
+6.Backspace compare(2)  *
+7..First non repeating char in stream  *
+8.Remove k digit to make small number  *
+9.Infix Evaluation(number single digit(w/o ( ) ) or multiple digit) 
+10.Infix conversion to prefix postfix 
+11.Postfix/prefix eval and conversion
+12.Evaluate RPN
+
+
+======================
+8 oct
+7.guess Number
+8.first bad version     
+10.Transition pt
+
+
+20.Building receiving sunlight
+21.chocolate distrbn
+22.Count triplets *
+23.Triangle num *
+24.count 0 in matrix
+25.roof top
+26.sqr root (2)
+27.Pow *
+28.Find pair with given diff
+
+
+======================
+9 oct
+1.Stack to Queue(remove/add efficient)
+2.Queue to Stack(remove/add efficient)
+3.TwoStack                                            
+4.Stack with increment operation          
+5.Stack(Normal and Dynamic)
+6.Queue(Normal and Dynamic)                        //make,copy,change ref and variable
+7.Minstack(2){1-initially ms 1e9}
+8.Reverse first k queue element
+9.calculate *
+10.Remove duplicate letters to make smallest in lexographical order *
+11.simplify path *
+12.Build array by stack oprn
+13.Remove duplicates size k *
+
+
+======================  
+18 Aug
+1.Palindromic Substring/Count/Longest
+2.Longest palindromic subsequence/generate ans-using string dp,linkedlist,variable
+3.Count pali subseq
+4.Distinct Subseq
+5.Longest Common subseq/If s2 subseq of s1/Uncrossed Lines
+6.Edt distance
+7.Minimum operation to make string equal
+8.Longest common substring
+9.Distinct subseq 2
+
+======================
+21 sept
+1.LIS-2/LDS-2/LBS/MaxSumInc/decr/bitonic subseq 
+2.Min deln for sorted
+3.Number of lis of max len
+
+======================
+26 sept
+    1.live streaming
+    2.cap theorem
+    3.caching | redis
+4.which database to choose
+    5.whatsapp system design
+6.scale from 0 to 1M
+     7.SOLID Principle
+
+======================
+20 sept
+1.Matrix chain mul-2/min score triang
+2.Min max value of exprn
+3.eval boolean exprn
+4.Max coin burst balloon
+5.obst-4
+6.buy n sell -1 transaction allowed,inf transaction allowed,infinite trans+fees,infinite trans+cooldown,2 tran allowed
+

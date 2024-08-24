@@ -1,0 +1,46 @@
+    Construct Graph-addEdge/findEdge/removeEdge/removeVertex/display
+    center of graph
+
+    14.bus route *
+
+    Topological sort
+    kahn algo
+    course schedule/2
+    Longest increasing path
+    cycle present using dfs in directional--207/210
+    Kosa Raju
+    Iterative dfs
+
+    Prims algo(2) 2 case(connected disconnected)
+    Network delay time 
+    djikstra(2)
+    cheapest flight within k stop(2) *
+    swim in water
+    bellman ford
+
+    Union find
+    Redundant Connection
+    num of province
+    num of oprn to make comp connected
+    Satisfiability of Equality Equations
+    Number of similar groups-2
+    lexographically smallest eqv string
+    Max island,area of island
+    num of island 2 *  (repeating edge/visited+parent/only parent)
+    Malware Spread
+    Region cut by slashes 
+    Redundant connection 2  
+    journey to moon
+ 
+    kruskal
+    min cost to supply water
+    mr president 
+
+    Articulation pt
+    Critical Conn
+    clone graph
+    Euler ckt & path
+    Graph color
+    Shortest Path Visiting All Nodes
+
+

@@ -1,0 +1,71 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch PqConstruct",
+            "request": "launch",
+            "mainClass": "PqConstruct",
+            "projectName": "9.HashMap-F&L_bf095c83"
+        },
+        {
+            "type": "java",
+            "name": "Launch PqConstructGeneric",
+            "request": "launch",
+            "mainClass": "PqConstructGeneric",
+            "projectName": "2.HashMap-F&L_556a765b"
+        },
+        {
+            "type": "java",
+            "name": "Launch sumeesirHash",
+            "request": "launch",
+            "mainClass": "sumeesirHash",
+            "projectName": "2.HashMap-F&L_556a765b"
+        },
+        {
+            "type": "java",
+            "name": "Launch sumeesirHash",
+            "request": "launch",
+            "mainClass": "sumeesirHash",
+            "projectName": "hashmapHeap_cae2ce84"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - BasicofPQ",
+            "request": "launch",
+            "mainClass": "BasicofPQ",
+            "projectName": "hashmapHeap_cae2ce84"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - heap",
+            "request": "launch",
+            "mainClass": "heap",
+            "projectName": "hashmapHeap_cae2ce84"
+        },
+        {
+            "name": "g++.exe - Build and debug active file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\i686-8.1.0-posix-dwarf-rt_v6-rev0\\mingw32\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++.exe build active file"
+        }
+    ]
+}

@@ -1,0 +1,720 @@
+//check div by 3 wrong pep soln
+
+N=(N&N-1)|(N & (-N))
+// 342  fail case-32
+bool isPowerOfFour(int n) {
+    return n > 0 && (n & (n - 1)) == 0 && ((n & 0x55555555) == n);
+}
+
+//693  (n & (n<<1))j==0; fatega 4 pr
+bool hasAlternatingBits(int n)     
+{
+    //         int d=(n&1);
+    //         while((n&1)==d)
+    //         {
+    //             d^=1;
+    //             n>>=1;
+    //         }
+
+    //         return n==0;
+
+    //num+1 ki wjh se integer ki max value pr overflow
+    long num = n;
+    num = (num ^ (num >> 1));
+    return (num & num + 1) == 0; 
+}
+
+//338
+vector<int> countBits(int n)
+{
+    if (n == 0)
+        return {0};
+
+    vector<int> dp(n + 1);
+    dp[0] = 0;
+
+    for (int i = 1; i <= n; i++)
+    {
+        if ((i & 1) == 0) //even mein ending bit 0
+            dp[i] = dp[i >> 1];
+        else
+            dp[i] = dp[i >> 1] + 1;
+    }
+    return dp;
+}
+
+// leetcode 191
+int hammingWeight(int n) {
+    int count = 0;
+    for (int i = 0; i < 32; i++) {
+        int mask = (1 << i);
+        if ((n & mask) != 0)
+            count++;
+    }
+    return count;
+}
+
+int hammingWeight1(int n) {
+    int count = 0;
+    int numberofBits = 0;
+    while (n != 0 && numberofBits < 32) {
+        if ((n & 1) != 0)
+            count++;
+        n >>= 1;
+        numberofBits++;
+    }
+    return count;
+}
+
+int hammingWeight2(int n) {
+    int count = 0;
+    while (n != 0) {
+        n = (n & (n - 1)); // last set bit ko 0 krega //with this it is passing on ib
+        count++;
+    }
+    return count;
+}
+
+//461
+int hammingDistance(int x, int y)
+{
+    int total = 0;
+    for (int i = 0; i < 32; i++)
+    {
+        if ((x & (1 << i)) != (y & (1 << i)))
+            total++;
+    }
+    return total;
+}
+
+//476 bhi //1009
+int bitwiseComplement(int n)
+{
+    int mask = 1;
+    while (mask < n)
+    {
+        mask = ((mask << 1) | 1);
+    }
+
+    return n ^ mask;
+}
+
+// 1486
+int xorOperation(int n, int start) {
+    int ans = 0;
+
+    for (int i = 0; i < n; i++)
+        ans ^= start + 2 * i;
+    return ans;
+}
+
+//1720
+vector<int> decode(vector<int> &encoded, int first)
+{
+    //encoded-n length ans->n+1
+    vector<int> ans(encoded.size() + 1);
+    ans[0] = first;
+    for (int i = 0; i < encoded.size(); i++)
+    {
+        ans[i + 1] = ans[i] ^ encoded[i];
+    }
+    return ans;
+}
+
+public static void basicOfBit(int n, int i, int j, int k, int m) {
+    int mask = (1 << i);
+    System.out.println((n | mask));
+
+    mask = (~(1 << j));
+    System.out.println((n & mask));
+
+    mask = (1 << k);
+    System.out.println((n ^ mask));
+
+    mask = (1 << m);
+    if ((n & mask) == 0)
+        System.out.println(false);
+    else
+        System.out.println(true);
+
+    mask = (1 << m);
+    if ((n | mask) == n)
+        System.out.println(true);
+    else
+        System.out.println(false);
+} 
+
+public static void rsbMask(int n) {
+    int rsbMask = (n & (-n));
+    System.out.println(Integer.toBinaryString(rsbMask)); // 72 kelie 1000 answer
+}
+
+//ib
+int trailingZeroes(int A)
+{
+
+    // int i=0;
+    // for(;i<32;i++)
+    // {
+    //     if((A&(1<<i))>0)
+    //         break;
+    // }
+
+    // return i;
+
+    A = A & (-A);
+    return log2(A);
+}
+
+public static void kernighansAlgo(int n) {
+    int count = 0;
+    while (n != 0) {
+        int rsbm = n & -n;
+        n = n - rsbm;
+        count++;
+    }
+    System.out.println(count);
+}
+
+public static void allRepeatingExceptOne(int[] arr) {
+    int uniValue = 0;
+    for (int i = 0; i < arr.length; i++)
+        uniValue = uniValue ^ arr[i];
+
+    System.out.println(uniValue);
+}
+
+//array of length n containing numbers from 1 to n.
+public static void oneRepeatingOneMissing(int[] arr) {
+    int xxory = 0;
+    int n = arr.length;
+    for (int i = 0; i < n; i++)
+        xxory ^= arr[i];
+
+    for (int i = 1; i <= n; i++)
+        xxory ^= i;
+
+    int rsbm = xxory & -xxory;
+
+    int x = 0, y = 0;
+    for (int i = 0; i < n; i++) {
+        if ((arr[i] & rsbm) == 0)
+            x = x ^ arr[i];
+        else
+            y = y ^ arr[i];
+    }
+
+    for (int i = 1; i <= n; i++) {
+        if ((i & rsbm) == 0)
+            x = x ^ i;
+        else
+            y = y ^ i;
+    }
+
+    for (int val : arr) {
+        if (val == x) {
+            System.out.println("Missing Number -> " + y);
+            System.out.println("Repeating Number -> " + x);
+            break;
+        } else if (val == y) {
+            System.out.println("Missing Number -> " + x);
+            System.out.println("Repeating Number -> " + y);
+            break;
+        }
+    }
+}
+
+public static void allRepeatingExceptTwo(int[] arr) { 
+    // [1,1,0,-2147483648] -int_min negation cannot be represented in int so use
+    // long i xxory and rsbm
+    int xxory = 0;
+    for (int val : arr) {
+        xxory = xxory ^ val;
+    }
+
+    int rsbm = xxory & (-xxory);
+
+    int x = 0, y = 0;
+    for (int i = 0; i < arr.length; i++) {
+        if ((arr[i] & rsbm) == 0)
+            x = x ^ arr[i];
+        else
+            y = y ^ arr[i];
+    }
+
+    if (x < y) {
+        System.out.println(x);
+        System.out.println(y);
+    } else {
+        System.out.println(y);
+        System.out.println(x);
+    }
+} 
+
+//*
+public static void isPowerof2(int n) {
+    n = (n & (n - 1));
+    if (n == 0)
+        System.out.println(true);
+    else
+        System.out.println(false);
+}
+
+public static void swapAlloddandEven(int n) {
+    int evenMask = 0xAAAAAAAA;
+    int oddMask = 0x55555555;
+
+    oddMask = n & oddMask;
+    evenMask = n & evenMask;
+
+    oddMask <<= 1;
+    evenMask >>= 1;
+
+    System.out.println(oddMask | evenMask);
+}
+
+public static void flipBitsAtoB(int a, int b) {
+    int xor = a ^ b;
+
+    int count = 0;
+    while (xor != 0) {
+        int rsbm = xor & -xor;
+        xor = xor - rsbm;
+        count++;
+    }
+    System.out.println(count);
+}
+
+public static int XORsumofAllPairs(int[] arr) {
+    int sum = 0;
+    for (int i = 0; i < arr.length; i++) {
+        sum ^= arr[i];
+    }
+    return 2 * sum;
+}
+
+// 477
+public static long sumOfBitDiffernceOfAllPair(int[] arr) { 
+    long sum = 0;
+    for (int i = 0; i < 32; i++) {
+        long countOn = 0;
+        for (int val : arr) {
+            if ((val & (1 << i)) != 0)
+                countOn++;
+        }
+
+        long countOff = arr.length - countOn;
+        // sum += countOn * countOff * 2; //for pep
+        sum += countOn * countOff; // for leetcode
+    }
+    return sum;
+}
+
+public static void solve7nBy8(int n) {
+    int res = (((n << 3) - n) >> 3);
+    System.out.println(res);
+}
+
+public static int JosephusProblem(int n) {
+
+    int survivedPerson = 0;
+    int i = 1; // goes like 1.2.4.8.16
+    while (i * 2 <= n) {
+        i = i * 2;
+    }
+
+    survivedPerson = 2 * (n - i) + 1;
+    return survivedPerson;
+}
+
+//*
+public static void copySetBitsInRange(int a, int b, int left, int right) {
+    int ls = (right - left + 1); // left shift
+    int m = (((1 << ls) - 1) << (left - 1));
+
+    m = m & a;
+
+    System.out.println(m | b);
+}
+
+public static void printBinaryandReverseBits(int n) {
+    int j = 0, rev = 0;
+    boolean flag = false;
+    for (int i = 31; i >= 0; i--) {
+        int mask = (1 << i);
+        int val = n & mask;
+        if (flag == true) {
+            if (val != 0) {
+                System.out.print(1);
+                int m = (1 << j);
+                rev |= m;
+            } else
+                System.out.print(0);
+            j++;
+        } else {
+            if (val != 0) { // jab pehla 1 mila
+                flag = true;
+                System.out.print(1);
+
+                // int m = (1 << j);
+                rev |= 1;
+                j++;
+            }
+        }
+    }
+    System.out.println();
+    System.out.println(rev);
+}
+
+//190
+public int reverseBits(int n)
+{
+    int rev = 0, j = 0;
+    for (int i = 31; i >= 0; i--)
+    {
+        int mask = (1 << i);
+        int val = n & mask;
+        if (val != 0)
+        {
+            int m = (1 << j);
+            rev |= m;
+        }
+
+        j++;
+    }
+    return rev;
+}
+
+public static void minXORpairs(int[] arr) {
+    Arrays.sort(arr);
+
+    ArrayList<String> list = new ArrayList<>();
+    int min = (int) 1e9;
+    for (int i = 0; i < arr.length - 1; i++) {
+        int val = arr[i] ^ arr[i + 1];
+        if (val < min) {
+            list = new ArrayList<>();
+            list.add(arr[i] + ", " + arr[i + 1]);
+            min = val;
+        } else if (val == min) {
+            list.add(arr[i] + ", " + arr[i + 1]);
+        }
+    }
+
+    for (String str : list) {
+        System.out.println(str);
+    }
+}
+
+public static int largestPowerof2inrange(int n) {
+    int x = 0;
+    while ((1 << x) <= n) {
+        x++;
+    }
+
+    return x - 1;
+}
+
+public static int countSetBitsInFirstNNaturalNumber(int n) {
+    if (n == 0)
+        return 0;
+    int x = largestPowerof2inrange(n);
+
+    int count = x * (1 << (x - 1)) + (n - (1 << x) + 1) + countSetBitsInFirstNNaturalNumber(n - (1 << x));
+    return count;
+} 
+
+public static List<String> grayCode(int n) { // 89
+    if (n == 0) {  // no need
+        List<String> base = new ArrayList<>();
+        base.add("0");
+        return base;
+    }
+
+    if (n == 1) {
+        List<String> base = new ArrayList<>();
+        base.add("0");
+        base.add("1");
+        return base;
+    }
+
+    List<String> smallAns = grayCode(n - 1);
+    List<String> ans = new ArrayList<>();
+    for (int i = 0; i < smallAns.size(); i++) {
+        ans.add("0" + smallAns.get(i));
+    }
+    for (int i = smallAns.size() - 1; i >= 0; i--) {
+        ans.add("1" + smallAns.get(i));
+    }
+    // List<Integer> ans = new ArrayList<>(smallAns);
+    // int addNumber=(1<<n-1);   // 0 1 => 00 01 11 10 => 000 001 011 010 110 111 101 100
+    // for (int i = smallAns.size() - 1; i >= 0; i--) {
+    // ans.add(addNumber + smallAns.get(i));
+    // }   
+    //ya fir main function mein driver se puri list mngwake ans.add(Integer.parseInt(str,2));
+    return ans;
+}
+
+public static void abbreviationUsingBits(String str) {
+    for (int i = 0; i < (1 << str.length()); i++) { // for total abbreviation
+        StringBuilder sb = new StringBuilder();
+        int count = 0;
+        for (int j = 0; j < str.length(); j++) {
+            int b = str.length() - 1 - j;
+            if ((i & (1 << b)) == 0) {
+                if (count != 0) {
+                    sb.append(count);
+                    sb.append(str.charAt(j));
+                    count = 0;
+                } else
+                    sb.append(str.charAt(j));
+            } else
+                count++;
+        }
+        if (count != 0)
+            sb.append(count);
+        System.out.println(sb.toString());
+    }
+}
+
+static ArrayList<Integer> sol = new ArrayList<>(); // static gives same answer for different test case so dont use. // pskill:personSkill,cp:current person
+
+public static void minSoftwareDeveloper(int[] people, int skillsReqd, int cp, ArrayList<Integer> team, int pskill) {
+
+    if (cp == people.length) {
+        if (pskill == (1 << skillsReqd) - 1) {
+            if (sol.size() == 0 || team.size() < sol.size()) {
+            sol = new ArrayList<>(team);
+        }
+    }
+        return;
+    }
+
+    minSoftwareDeveloper(people, skillsReqd, cp + 1, team, pskill);
+    team.add(cp);
+    minSoftwareDeveloper(people, skillsReqd, cp + 1, team, (pskill | people[cp]));
+    team.remove(team.size() - 1);
+
+    // HashMap<String, Integer> smap = new HashMap<>();  //Assigning each skill a number
+        // for (int i = 0; i < n; i++) {
+        // smap.put(scn.next(), i);  
+    // }
+
+    // int np = scn.nextInt();
+    // int[] people = new int[np];
+    // for (int i = 0; i < np; i++) {
+    // int total_personSkills = scn.nextInt();
+    // for (int j = 0; j < total_personSkills; j++) {
+        // String skill = scn.next();
+        // int snum = smap.get(skill);
+        // people[i] = people[i] | (1 << snum);
+    // }
+// }
+    // minSoftwareDeveloper(people, n, 0, new ArrayList<>(), 0);
+}
+
+public static List<Integer> findNumOfValidWords(String[] words, String[] puzzles) {
+
+    HashMap<Character, List<Integer>> map = new HashMap<>();
+
+    for (int i = 0; i < 26; i++)
+        map.put((char) ('a' + i), new ArrayList<>());
+
+    for (String word : words) {
+        int mask = 0;
+        for (char ch : word.toCharArray()) {
+            int ls = (1 << (ch - 'a')); // left shift;
+            mask = mask | ls;
+        }
+
+        HashSet<Character> hs = new HashSet<>();
+        for (char ch : word.toCharArray()) {
+            if (hs.contains(ch))
+                continue;
+            map.get(ch).add(mask);
+            hs.add(ch);
+        }
+    }
+
+    /*
+        * for(int i=0;i<26;i++) { List<Integer>li=map.get((char)('a'+i));
+        * if(li.size()!=0) { System.out.print((char)('a'+i)+" -> "); for(int
+        * j=0;j<li.size();j++) System.out.print(li.get(j)+" "); System.out.println(); }
+        * }
+    */
+
+    List<Integer> ans = new ArrayList<>();
+    for (String puzzle : puzzles) {
+        int pmask = 0;
+        for (char ch : puzzle.toCharArray()) {
+            int ls = (1 << (ch - 'a')); // left shift;
+            pmask = pmask | ls;
+        }
+
+        char fc = puzzle.charAt(0); // first character
+        List<Integer> list = map.get(fc);
+        int count = 0;
+        for (int wmask : list) {
+            if ((wmask & pmask) == wmask)
+                count++;
+        }
+
+        ans.add(count);
+    }
+
+    return ans;
+}
+
+//318
+public int maxProduct(String[] words) {
+        int n=words.length;
+        int []masks=new int[n];
+        
+        int j=0;
+        for(String word:words)
+        {
+            int wmask=0;
+            for(int i=0;i<word.length();i++)
+            {
+                int m=(1<<(word.charAt(i)-'a'));
+                wmask|=m;
+            }
+            masks[j++]=wmask;
+        }
+        
+        int ans=0;
+        for(int i=0;i<n;i++)
+        {
+            for(int k=i+1;k<n;k++)
+            {
+                if((masks[i]&masks[k])==0)
+                {
+                    ans=Math.max(ans,words[i].length()*words[k].length());
+                }
+            }
+        }
+        return ans;        
+}
+
+//29
+public int divide(int dividend, int divisor) {
+    if(dividend==Integer.MIN_VALUE && divisor==-1)return Integer.MAX_VALUE;
+    
+    int result=0,dividend_c=dividend,divisor_c=divisor;  //copy
+    dividend=Math.abs(dividend);
+    divisor=Math.abs(divisor);
+    while(dividend-divisor>=0)
+    {
+        int count=0;
+        while(dividend -(divisor<<1<<count)>=0)
+            count++;
+        
+        result+=(1<<count);
+        dividend-=divisor<<count;
+    }
+    
+    return (divisor_c>0)==(dividend_c>0)?result:-result;
+}
+
+//1461
+public boolean hasAllCodes(String s, int k) {
+    HashSet<String>hs=new HashSet<>();
+    for(int i=0;i<s.length()-k+1;i++)
+    {
+        hs.add(s.substring(i,i+k));
+    }
+    return hs.size()==Math.pow(2,k);
+}
+
+//1863
+public List<List<Integer>> allsubsets(int []nums,int idx,int n)
+{
+    if(idx==n)
+    {
+        List<List<Integer>>base=new ArrayList<>();
+        base.add(new ArrayList<>());
+        return base;
+    }
+    
+    List<List<Integer>>ans=allsubsets(nums,idx+1,n);
+    List<List<Integer>>result=new ArrayList<>();
+    
+    for(List<Integer>ar:ans)
+    {
+        List<Integer>arr=new ArrayList<>(ar);
+        result.add(ar);
+        arr.add(nums[idx]);
+        result.add(arr);
+    }
+    return result;
+}
+
+
+public int subsetXORSum(int[] nums) {
+    
+    int total=0;
+    int n=nums.length;
+    List<List<Integer>>result=allsubsets(nums,0,n);
+    for(int i=0;i<result.size();i++)
+    {
+        if(result.get(i).size()==0)continue;
+        else if(result.get(i).size()==1)total+=(result.get(i)).get(0);
+        else{
+            int ans=(result.get(i)).get(0);
+            for(int j=1;j<result.get(i).size();j++)
+            {
+                ans^=(result.get(i)).get(j);
+            }
+            total+=ans;
+        }
+    }
+    return total;
+}
+
+
+//daily challenge 2 april
+class Solution {
+public:
+    vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, long long success) {
+        
+        sort(potions.begin(),potions.end());
+        int m = potions.size();
+        vector<int>result;
+        for(int i=0;i<spells.size();i++)
+        {
+            long target = ceil(success*1.0/spells[i]);
+            int si = 0, ei = m-1, ans = -1;
+            
+            if(target > potions[m-1])
+                result.push_back(0);
+            else if(target < potions[0])
+                result.push_back(m);
+            else{
+                while(si <= ei)
+                {
+                    int mid = ei + (si - ei)/2;
+                    if(potions[mid] == target)
+                    {
+                        if(mid-1>=0 && potions[mid]==target)
+                            ei=mid-1;
+                        else{
+                            ans = mid;
+                            break;
+                        }
+                    }
+                    else if(potions[mid] > target)
+                    ei = mid - 1;
+                    else si = mid + 1;
+                }
+                
+                // cout<<ans<<endl;
+                if(ans != -1)
+                    result.push_back(m - ans);
+                else
+                    result.push_back(m - si);
+            }
+        }       
+
+        return result;
+    }
+};
